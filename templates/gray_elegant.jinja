@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/gray_elegant.css" />
+    <title>Resume Template CV</title>
+  </head>
+  <body>
+    <main class="container">
+
+      {# RESUME LEFT #}
+      <div class="resume__left">
+        <img class="profile__picture" src="{{ profile_picture }}" />
+
+        <!-- Personal Details -->
+        <!-- Contact -->
+        {% if contact %}
+        <section class="contact">
+          <h1>Contact</h1>
+          <ul>
+            {% for element in contact %}
+            <li>
+              {{ element.icon }}
+              <div class="text">{{ element.title }}</div>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <!-- TechStack -->
+        {% if techstack %}
+        <section class="techstack">
+          <h1>TechStack</h1>
+          <ul>
+          {% for element in techstack %}
+            <li>{{ element }}</li>
+          {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <!-- Languages -->
+        {% if languages %}
+        <section class="languages">
+          <h1>Languages</h1>
+          <ul>
+          {% for element in languages %}
+            <li>{{ element }}</li>
+          {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <!-- Interests -->
+        {% if interests %}
+        <section class="interests">
+          <h1>Interests</h1>
+          <ul>
+          {% for element in interests %}
+            <li>
+              {{ element.icon }}
+              <p>{{ element.title }}</p>
+            </li>
+          {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+      </div>
+
+      {# RESUME RIGHT #}
+      <div class="resume__right">
+        <!-- Header (Name, Surname) -->
+        <section class="header">
+          <p class="name">{{ name }}</p>
+          <p class="surname">{{ surname }}</p>
+          <p class="job__title">{{ job_title }}</p>
+        </section>
+
+        <!-- About Me -->
+        <section class="about_me">
+          <h2>About me</h2>
+          <p>{{ about_me }}</p>
+        </section>
+
+        <!-- Education -->
+        {% if education %}
+        <section class="education">
+          <h1>EDUCATION</h1>
+          {% for course in education %}
+          <div class="course">
+            {% if course.name %}
+            <div class="position__year">
+              <p class="name">{{ course.name }}</p>
+              <p class="years">{{ course.years }}</p>
+            </div>
+            {% endif %}
+            <p class="faculty">{{ course.faculty }}</p>
+            <p class="field__of__study">{{ course.field_of_study }}</p>
+          </div>
+          {% endfor %}
+        </section>
+        {% endif %}
+
+        <!-- Work Experience -->
+        {% if work_experience %}
+        <section class="experience">
+          <h1>Work Experience</h1>
+          {% for job in work_experience %}
+          <div class="job">
+            <div class="position__year">
+              <p class="company__name">{{ job.company_name }}</p>
+              <p class="years">{{ job.years }}</p>
+            </div>
+            {% if job.position %}
+            <p class="position">{{ job.position }}</p>
+            {% endif %}
+            {% if job.description %}
+            <p class="description">{{ job.description }}</p>
+            {% endif %}
+            {% if job.skills %}
+            <div class="skills">
+              {% if job.skills is not string %}
+              <ul>
+                {% for skill in job.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p><strong>Skills: </strong>{{ job.skills }}</p>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </section>
+        {% endif %}
+      </div>
+    </main>
+  </body>
+</html>

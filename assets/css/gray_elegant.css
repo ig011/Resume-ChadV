@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /* Variables */
+  /* Font Colors */
+  --color-font-h1: rgb(255, 255, 255);
+  --color-font-main: rgb(50, 50, 50);
+  --color-font-main-lighter: rgb(135, 135, 135);
+
+  /* Background Colors */
+  --color-background-h1: linear-gradient(
+    0deg,
+    rgb(50, 50, 50) 0%,
+    rgb(70, 70, 70) 100%
+  );
+  --color-background-resume-left: linear-gradient(
+    180deg,
+    rgba(235, 235, 235, 1) 0%,
+    rgba(245, 245, 245, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  --color-background-resume-right: white;
+
+  /* Sizes */
+  --size-A4-paper-width: 21cm;
+  --size-A4-paper-height: 29.7cm;
+
+  --size-circle-divisor: 0.2rem;
+  --size-profile-picture: 14rem;
+  --size-icons: 19px;
+  --size-icons-interests: 20px;
+
+  /* Borders */
+  --border-profile-picture: 0.2rem solid white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  width: var(--size-A4-paper-width);
+  min-width: var(--size-A4-paper-width);
+  max-width: var(--size-A4-paper-width);
+  min-height: var(--size-A4-paper-height);
+  font-family: "Poppins", sans-serif;
+  color: var(--color-font-main);
+}
+
+.profile__picture {
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  margin: 0.5rem 0;
+  width: var(--size-profile-picture);
+  height: var(--size-profile-picture);
+  border: var(--border-profile-picture);
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px -10px black;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.resume__left {
+  flex: 0.35;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 15px;
+  padding: 20px;
+  height: 100vh;
+  background: var(--color-background-resume-left);
+}
+
+.resume__left section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.resume__left h1 {
+  align-self: center;
+  width: 100%;
+  margin: 15px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 7px;
+  background: var(--color-background-h1);
+  color: var(--color-font-h1);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  border-radius: 2rem;
+}
+
+.resume__left .personal__details p {
+  margin-left: 1rem;
+}
+
+.resume__left ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+  margin-left: 0.5rem;
+}
+
+.resume__left .contact li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.resume__left .techstack ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 0.5rem;
+  column-gap: 0;
+}
+
+.resume__left .techstack li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 33.3%;
+}
+
+.resume__left .languages ul {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.resume__left .interests ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume__left .interests li {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.resume__right {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  flex: 0.65;
+  background-color: var(--color-background-resume-right);
+}
+
+.resume__right h1 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  letter-spacing: 0.1rem;
+  border-bottom: 0.15rem solid black;
+}
+
+.resume__right h2 {
+  width: fit-content;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.3rem;
+  background: var(--color-background-h1);
+  color: var(--color-font-h1);
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.resume__right .header {
+  margin: 1rem 0;
+  font-size: 4rem;
+  align-self: flex-start;
+}
+
+.resume__right .header p {
+  margin: 0;
+  padding: 0;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+}
+
+.resume__right .header .name {
+  font-weight: bold;
+  font-size: 3.8rem;
+}
+
+.resume__right .header .surname {
+  font-weight: lighter;
+}
+
+.resume__right .header .job__title {
+  font-size: 1.5rem;
+  height: 2rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--color-font-main-lighter);
+  text-transform: none;
+}
+
+.resume__right .about_me br {
+  margin-bottom: 0.3rem;
+}
+
+.resume__right .about_me p {
+  font-size: 0.65rem;
+  color: var(--color-font-main-lighter);
+  text-align: justify;
+}
+
+.resume__right .education,
+.resume__right .experience {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.resume__right .education .course,
+.resume__right .experience .job {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  line-height: 1.3rem;
+}
+
+.resume__right .education .course .position__year,
+.resume__right .experience .job .position__year {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resume__right .education .course .years,
+.resume__right .experience .job .years {
+  font-size: 1rem;
+}
+
+.resume__right .experience .job .company__name {
+  font-weight: bold;
+}
+
+.resume__right .experience .job .description {
+  font-size: 0.7rem;
+  text-align: justify;
+  line-height: 1.1rem;
+  color: var(--color-font-main-lighter);
+}
+
+.resume__right .experience .job .skills {
+  margin: 0.2rem 0;
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+
+.resume__right .experience .job .skills ul {
+  margin-left: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.resume__right .education .course .name {
+  font-weight: bold;
+}
+
+.resume__right .education .course .faculty {
+  font-size: 0.9rem;
+}
+
+.resume__right .education .course .field__of__study {
+  font-size: 0.85rem;
+}
